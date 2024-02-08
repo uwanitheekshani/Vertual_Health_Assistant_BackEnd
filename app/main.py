@@ -4,8 +4,10 @@ from train_model import get_bot_response  # Import your actual bot response logi
 from flask_mysqldb import MySQL
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "*"}})
-
+CORS(app, resources={r"/api/*": {"origins": "*"}}, 
+     allow_headers=["*"],
+     allow_methods=["*"],
+     expose_headers=["*"])
 # Configure MySQL connection
 app.config['MYSQL_HOST'] = '127.0.0.1'
 app.config['MYSQL_USER'] = 'root'
