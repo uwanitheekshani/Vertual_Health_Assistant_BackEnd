@@ -1,0 +1,8 @@
+flask
+pandas
+scikit-learn
+joblib
+flask-cors
+flask_mysqldb
+fuzzywuzzy
+python-Levenshtein
