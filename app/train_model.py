@@ -140,7 +140,7 @@ def train_and_save_model(dataset_path, save_path='health_assistant_model.joblib'
 
     return grid_search.best_estimator_
 
-def get_bot_response(user_input, model_path='health_assistant_model.joblib', dataset_path='G:\Volume E\Virtual_Health_Assistant(BE)\dataset\med_2.csv'):
+def get_bot_response(user_input, model_path='health_assistant_model.joblib', dataset_path='https://medcsv.s3.ap-south-1.amazonaws.com/uploads/med_2.csv'):
     df = pd.read_csv(dataset_path)
     health_assistant_model = joblib.load(model_path)
 
@@ -170,5 +170,5 @@ def get_bot_response(user_input, model_path='health_assistant_model.joblib', dat
                 return "No answer found for the predicted focus area."
 
 if __name__ == '__main__':
-    model = train_and_save_model('G:\Volume E\Virtual_Health_Assistant(BE)\dataset\med_2.csv', 'health_assistant_model.joblib')
+    model = train_and_save_model('https://medcsv.s3.ap-south-1.amazonaws.com/uploads/med_2.csv', 'health_assistant_model.joblib')
 

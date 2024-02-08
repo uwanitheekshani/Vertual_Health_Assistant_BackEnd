@@ -20,7 +20,7 @@ def index():
 @app.route('/api/get_response', methods=['POST'])
 def get_response():
     user_input = request.json.get('user_input')
-    bot_response = get_bot_response(user_input, 'health_assistant_model.joblib', 'G:\Volume E\Virtual_Health_Assistant(BE)\dataset\med_2.csv')
+    bot_response = get_bot_response(user_input, 'health_assistant_model.joblib', 'https://medcsv.s3.ap-south-1.amazonaws.com/uploads/med_2.csv')
     return jsonify({'bot_response': bot_response})
 
 
